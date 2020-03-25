@@ -1,5 +1,5 @@
 <?php
-
+namespace Kreezalid\Entity;
 
 class User extends Entity
 {

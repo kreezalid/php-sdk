@@ -1,5 +1,5 @@
 <?php
-
+namespace Kreezalid\Entity;
 
 class Order extends Entity
 {
