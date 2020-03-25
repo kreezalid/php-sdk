@@ -1,17 +1,32 @@
 <?php
 namespace Kreezalid\Repositories;
 
+use Kreezalid\Entity\Listing;
+
 class ListingsRepository extends Repository
 {
 
     public function all($params = [])
     {
-        return $this->api->execute('GET', '/listings.json', $params);
+        $listings =  $this->api->execute('GET', '/listings.json', $params);
+        $listingObjects = [];
+        if(!empty($listings['listings'])) {
+            foreach ($listings['listings'] as $listing) {
+                $listingObjects[] = $this->base->castResponseToEntity($listing, Listing::class);
+            }
+        }
+        return $listingObjects;
     }
 
     public function get($id, $params = [])
     {
-        return $this->api->execute('GET', '/listings/' . $id . '.json', $params);
+        $listing = $this->api->execute('GET', '/listings/' . $id . '.json', $params);
+        if(!isset($listing['listing']) || empty($listing['listing'])) {
+            return $listing;
+        }
+        return $this->base->castResponseToEntity($listing['listing'], Listing::class);
+
+
     }
 
     public function create($params = [])
