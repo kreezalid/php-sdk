@@ -18,5 +18,8 @@
             "email": "hello@kreezalid.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-curl": "*",
+        "ext-json": "*"
+    }
 }

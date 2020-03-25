@@ -1,7 +1,7 @@
 <?php
 namespace Kreezalid\Repositories;
 
-class OrderRepository extends Repository
+class OrdersRepository extends Repository
 {
 
     public function all($params = [])

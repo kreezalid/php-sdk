@@ -1,6 +1,6 @@
 <?php
 /**
- * Get a list of all users
+ * Get one user
  */
 
 error_reporting( E_ALL );
@@ -12,7 +12,7 @@ use Kreezalid\Repositories\UsersRepository;
 $usersRepository = new UsersRepository();
 
 $users = $usersRepository->all();
-
+dd($users);
 echo '<pre>';
 var_dump($users);
 echo '</pre>';

@@ -34,6 +34,7 @@ class ApiConnect
      */
     public function execute($method, $url, $data = false)
     {
+
         $curl = curl_init();
         switch ($method){
             case "POST":
@@ -54,6 +55,7 @@ class ApiConnect
                 die('DELETE request is not implemented yet');
                 break;
             default:
+
                 if ($data) {
                     $url = sprintf("%s?%s", $url, http_build_query($data));
                 }
