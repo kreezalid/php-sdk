@@ -10,8 +10,4 @@ abstract class Entity
     /** @var string */
     public $object;
 
-    public function __construct($data)
-    {
-
-    }
 }

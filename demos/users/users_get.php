@@ -7,13 +7,20 @@ error_reporting( E_ALL );
 
 require_once '../../vendor/autoload.php';
 
-use Kreezalid\Repositories\UsersRepository;
+$api = new \Kreezalid\KreezalidApi();
 
-$usersRepository = new UsersRepository();
+$api->Config->setApiSecret('057eb5c838429903e8d19d51abcec03f62a233de5ad978ae38');
+$api->Config->setApiKey('nabil@kreezalid.co');
+$api->Config->setApiUrl('http://nabil.dev.mykreezalid.com');
+$id =830;
+try{
 
-$users = $usersRepository->all();
-dd($users);
+    $user = $api->Users->get($id); //current pour repcuperer premiere ligne tableau
+} catch (\Exception $e){
+    dd($e);
+}
+dd($user);
 echo '<pre>';
-var_dump($users);
+var_dump($user);
 echo '</pre>';
 

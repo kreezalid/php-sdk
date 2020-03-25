@@ -4,24 +4,14 @@ namespace Kreezalid;
 
 class ApiConnect
 {
-    public $api_url;
-    public $api_key;
-    public $api_secret;
-    public $api_version;
+    private $api_url;
+    private $api_key;
+    private $api_secret;
+    private $api_version;
 
-    /**
-     * ApiConnect constructor.
-     */
     public function __construct()
     {
-        // TODO: refactor how config params are handled
-        $config = include dirname(__DIR__) .  '/config.php';
-
-        $this->api_key      = $config['api_key'];
-        $this->api_secret   = $config['api_secret'];
-        $this->api_url      = $config['api_url'];
-        $this->api_version  = $config['api_version'];
-
+        $this->setApiVersion('v1');
     }
 
     /**
@@ -34,7 +24,9 @@ class ApiConnect
      */
     public function execute($method, $url, $data = false)
     {
-
+        if (is_object($data)){
+            $data = (array) $data;
+        }
         $curl = curl_init();
         switch ($method){
             case "POST":
@@ -93,5 +85,69 @@ class ApiConnect
         $endpointUrl = $this->api_url . '/api/' . $this->api_version . $url;
 //dd($endpointUrl);
         return $endpointUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiUrl()
+    {
+        return $this->api_url;
+    }
+
+    /**
+     * @param mixed $api_url
+     */
+    public function setApiUrl($api_url)
+    {
+        $this->api_url = $api_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiKey()
+    {
+        return $this->api_key;
+    }
+
+    /**
+     * @param mixed $api_key
+     */
+    public function setApiKey($api_key)
+    {
+        $this->api_key = $api_key;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiSecret()
+    {
+        return $this->api_secret;
+    }
+
+    /**
+     * @param mixed $api_secret
+     */
+    public function setApiSecret($api_secret)
+    {
+        $this->api_secret = $api_secret;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiVersion()
+    {
+        return $this->api_version;
+    }
+
+    /**
+     * @param mixed $api_version
+     */
+    public function setApiVersion($api_version)
+    {
+        $this->api_version = $api_version;
     }
 }

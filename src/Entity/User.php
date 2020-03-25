@@ -1,8 +1,14 @@
 <?php
 namespace Kreezalid\Entity;
 
-class User extends Entity
+class User
 {
+    /** @var int */
+    public $id;
+
+    /** @var string */
+    public $object;
+
     public $lang;
     public $timezone;
     public $profile_url;
@@ -26,4 +32,8 @@ class User extends Entity
     public $group_name;
     public $group_alias;
     public $email;
+
+
+
+
 }

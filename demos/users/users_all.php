@@ -6,12 +6,15 @@ error_reporting( E_ALL );
 
 require_once '../../vendor/autoload.php';
 
-use Kreezalid\Repositories\UsersRepository;
+$api = new \Kreezalid\KreezalidApi();
 
-$usersRepository = new UsersRepository();
+$api->Config->setApiSecret('057eb5c838429903e8d19d51abcec03f62a233de5ad978ae38');
+$api->Config->setApiKey('nabil@kreezalid.co');
+$api->Config->setApiUrl('http://nabil.dev.mykreezalid.com');
 
-$users = $usersRepository->all();
+$users = $api->Users->all();
 
+dd($users);
 echo '<pre>';
 var_dump($users);
 echo '</pre>';

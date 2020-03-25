@@ -4,6 +4,7 @@ namespace Kreezalid\Repositories;
 
 
 use Kreezalid\ApiConnect;
+use Kreezalid\Librairies\ApiBase;
 
 class Repository
 {
@@ -11,9 +12,13 @@ class Repository
     /** @var ApiConnect */
     public $api;
 
-    public function __construct()
+    /** @var ApiBase */
+    public $base;
+
+    public function __construct($api)
     {
-        $this->api = new ApiConnect();
+        $this->api = $api;
+        $this->base = new ApiBase();
     }
 
 }
