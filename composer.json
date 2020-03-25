@@ -1,0 +1,22 @@
+{
+    "name": "kreezalid/php-sdk",
+    "description": "PHP SDK for Kreezalid",
+    "minimum-stability": "stable",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kreezalid\\": "src/"
+        },
+        "files": [
+            "./src/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Kreezalid",
+            "email": "hello@kreezalid.com"
+        }
+    ],
+    "require": {}
+}

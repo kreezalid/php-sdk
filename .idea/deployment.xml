@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="dev.kreezalid.com">
+    <serverData>
+      <paths name="dev.kreezalid.com">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="kreezalid-php-sdk" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
