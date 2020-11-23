@@ -4,7 +4,7 @@ namespace Kreezalid\Repositories;
 
 
 use Kreezalid\ApiConnect;
-use Kreezalid\Librairies\ApiBase;
+use Kreezalid\Libraries\ApiBase;
 
 class Repository
 {

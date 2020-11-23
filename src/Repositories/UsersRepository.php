@@ -1,8 +1,8 @@
 <?php
 namespace Kreezalid\Repositories;
 
-use Kreezalid\Entity\User;
-use Kreezalid\Librairies\Exception;
+use Kreezalid\Entities\User;
+use Kreezalid\Libraries\Exception;
 
 class UsersRepository extends Repository
 {

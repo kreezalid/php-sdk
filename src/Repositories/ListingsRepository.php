@@ -1,8 +1,8 @@
 <?php
 namespace Kreezalid\Repositories;
 
-use Kreezalid\Entity\Listing;
-use Kreezalid\Librairies\Exception;
+use Kreezalid\Entities\Listing;
+use Kreezalid\Libraries\Exception;
 
 class ListingsRepository extends Repository
 {

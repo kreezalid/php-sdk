@@ -1,6 +1,6 @@
 <?php
 
-namespace Kreezalid\Librairies;
+namespace Kreezalid\Libraries;
 
 
 class Exception extends \Exception

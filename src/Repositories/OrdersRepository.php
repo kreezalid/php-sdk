@@ -1,8 +1,8 @@
 <?php
 namespace Kreezalid\Repositories;
 
-use Kreezalid\Entity\Order;
-use Kreezalid\Librairies\Exception;
+use Kreezalid\Entities\Order;
+use Kreezalid\Libraries\Exception;
 
 class OrdersRepository extends Repository
 {

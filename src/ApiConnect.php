@@ -83,7 +83,7 @@ class ApiConnect
     protected function _getEndpointUrl($url)
     {
         $endpointUrl = $this->api_url . '/api/' . $this->api_version . $url;
-//dd($endpointUrl);
+
         return $endpointUrl;
     }
 
