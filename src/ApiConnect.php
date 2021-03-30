@@ -32,14 +32,14 @@ class ApiConnect
             case "POST":
                 curl_setopt($curl, CURLOPT_POST, 1);
                 if ($data) {
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
                 }
                 break;
             case "PUT":
             case "PATCH":
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
                 if ($data) {
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
                 }
                 break;
             case "DELETE":
