@@ -7,6 +7,15 @@ use Kreezalid\Libraries\Exception;
 class UsersRepository extends Repository
 {
 
+    public $Metafields;
+
+    public function __construct($api)
+    {
+        $this->Metafields = new MetafieldsRepository($api, 'users');
+
+        parent::__construct($api);
+    }
+
     public function all($params = [])
     {
         $users = $this->api->execute('GET', '/users.json', $params);

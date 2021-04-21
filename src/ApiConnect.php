@@ -60,6 +60,8 @@ class ApiConnect
 //            'Content-Type: application/json',
 //        ]);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        // If true, local generated SSL certificates won't work
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
         //curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 
         // EXECUTE:
