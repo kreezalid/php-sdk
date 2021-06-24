@@ -13,7 +13,7 @@ class MetafieldsRepository extends Repository
 
     public function get($id)
     {
-        return $this->api->execute('GETT', '/' . $this->repository . '/' . $id . '/metafields');
+        return $this->api->execute('GET', '/' . $this->repository . '/' . $id . '/metafields');
     }
 
     public function update($id, $params = [])
