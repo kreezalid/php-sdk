@@ -55,6 +55,12 @@ class Order
      * @var string
      */
     public $status;
+    
+    /**
+     * @OA\Property(type="string")
+     * @var string
+     */
+    public $fulfillment_status;
 
     /**
      * @OA\Property(type="object", ref="#/components/schemas/User")
